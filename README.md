@@ -4,9 +4,7 @@ Streamline [Substrate](https://substrate.io/)-based Blockchain Development.
 
 Welcome to Substrate Manager, your Rust-based interactive CLI toolkit for streamlined development of Substrate-based blockchains and smart contracts. Whether you're building isolated blockchains, parachains, custom pallets, or smart contracts, Substrate Manager provides an intuitive interface to manage your projects with ease.
 
-<video height='100%' width='600' loop>
-  <source src="new-chain.mp4" type="video/mp4">
-  <source src="new-chain.webm" type="video/webm">
+<video src='https://github.com/omerdn1/substrate-manager/assets/10265367/64402895-b9ff-499b-88b6-f8c0dc2f0ad1' loop autoplay>
 </video>
 
 ## Approach and Philosophy
