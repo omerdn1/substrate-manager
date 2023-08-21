@@ -1,0 +1,3 @@
+remote = "https://github.com/paritytech/canvas.git"
+branch = "polkadot-v1.0.0"
+template_path = "."

@@ -1,0 +1,3 @@
+remote = "https://github.com/paritytech/frontier.git"
+branch = "master"
+template_path = "template"

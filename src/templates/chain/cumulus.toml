@@ -1,0 +1,4 @@
+remote = "https://github.com/paritytech/cumulus.git"
+branch = "polkadot-v1.0.0"
+template_path = "parachain-template"
+

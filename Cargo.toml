@@ -1,0 +1,48 @@
+[package]
+name = "substrate-manager"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/omerdn1/substrate-manager"
+documentation = "https://docs.rs/substrate-manager"
+homepage = "https://github.com/omerdn1/substrate-manager"
+description = """
+Substrate Manager, a CLI tool for Substrate-based blockchain development.
+"""
+readme = "README.md"
+keywords = ["substrate", "polkadot", "parachain", "cli"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "substrate_manager"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1.0.71"
+atty = "0.2.14"
+cargo-util = "0.2.4"
+clap = { version = "4.3.12", features = ["derive", "unstable-doc"] }
+color-eyre = "0.6.2"
+glob = "0.3.1"
+inquire = "0.6.2"
+interactive-clap = { path = "../../interactive-clap" }
+interactive-clap-derive = { path = "../../interactive-clap/interactive-clap-derive" }
+libc = "0.2.147"
+log = "0.4.19"
+open = "5.0.0"
+regex = "1.9.3"
+serde = "1.0.170"
+serde_derive = "1.0.183"
+serde_json = "1.0.100"
+shell-words = "1.1.0"
+strum = { version = "0.24.1", features = ["derive"] }
+syn = { version = "2.0.28", features = ["full"] }
+termcolor = "1.2.0"
+toml_edit = { version = "0.19.12", features = ["serde"] }
+unicode-xid = "0.2.4"
+which = "4.4.0"
+
+[[bin]]
+name = "substrate-manager"
+test = false
+doc = false
