@@ -10,6 +10,7 @@ Substrate Manager, a CLI tool for Substrate-based blockchain development.
 """
 readme = "README.md"
 keywords = ["substrate", "polkadot", "parachain", "cli"]
+license = "Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
