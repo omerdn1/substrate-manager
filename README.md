@@ -1,8 +1,12 @@
+### 🚧 **Note: Substrate Manager is currently in active development. While we strive to ensure stability, please consider backing up your projects before use. & Stay tuned for regular feature updates!**
+
 # Substrate Manager CLI
 
-Streamline [Substrate](https://substrate.io/)-based Blockchain Development.
+Streamline Your [Substrate](https://substrate.io/)-based Blockchain Development.
 
-Welcome to Substrate Manager, your Rust-based interactive CLI toolkit for streamlined development of Substrate-based blockchains and smart contracts. Whether you're building isolated blockchains, parachains, custom pallets, or smart contracts, Substrate Manager provides an intuitive interface to manage your projects with ease.
+Welcome to Substrate Manager, your interactive CLI toolkit for streamlined development of Substrate-based blockchains and smart contracts. Whether you're building isolated blockchains, parachains, custom pallets, or smart contracts, Substrate Manager provides an intuitive interface to manage your projects with ease.
+
+Substrate Manager is written in Rust and takes inspiration from projects like [Cargo](https://github.com/rust-lang/cargo) and [Near-CLI](https://github.com/near/near-cli-rs).
 
 <video src='https://github.com/omerdn1/substrate-manager/assets/10265367/50ac8c97-ba83-4376-b964-bff9babcc5e5' loop autoplay>
 </video>
@@ -41,7 +45,7 @@ Substrate Manager simplifies the creation and management of all types of Substra
 
 - **Project Creation:** Generate new chain projects using templates such as Substrate Node Template, Cumulus & Frontier, or custom templates adhering to Substrate Library Extension (SLE) standards.
 - **Launch Your Node:** Launch your chain nodes using your existing `chain_spec` commands, ensuring consistent behavior across projects.
-- **Pallet Integration:** Add pallets from a variety of sources, such as crates.io, Git repositories, local paths, or custom registries, to enhance your chain's functionality.
+- **Pallet Integration:** Install pallets directly to your runtime from a variety of sources, such as crates.io, Git repositories, local paths, or custom registries, to enhance your chain's functionality.
 - **Frontend Interfaces:** Launch Parity's frontend chain interface or your custom frontend to easily interact with your chain.
 - **Comprehensive Testing:** Validate your chain's functionality and robustness with comprehensive testing.
 
