@@ -8,10 +8,8 @@ Welcome to Substrate Manager, your interactive CLI toolkit for streamlined devel
 
 Substrate Manager is written in Rust and takes inspiration from projects like [Cargo](https://github.com/rust-lang/cargo) and [Near-CLI](https://github.com/near/near-cli-rs).
 
-<p align='center'>
-<img src='demo.svg' width='600' alt='substrate-manager'>
-</p>
-
+<video src='https://github.com/omerdn1/substrate-manager/assets/10265367/50ac8c97-ba83-4376-b964-bff9babcc5e5' loop autoplay>
+</video>
 
 ## Approach and Philosophy
 
