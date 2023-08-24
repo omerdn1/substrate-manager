@@ -6,7 +6,7 @@ use inquire::{Select, Text};
 use strum::{EnumDiscriminants, EnumIter, EnumMessage, IntoEnumIterator};
 use substrate_manager::ops;
 use substrate_manager::ops::substrate_new::NewOptions;
-use substrate_manager::util::{canonicalize_paths, command_prelude::*, CliResult, Config};
+use substrate_manager::util::{normalize_paths, command_prelude::*, CliResult, Config};
 
 use super::GlobalContext;
 
@@ -171,7 +171,7 @@ impl InputNameContext {
             NodeTemplate::Canvas => ops::substrate_new::Template::Canvas,
         };
 
-        let path = canonicalize_paths(previous_context.global_context.cwd(), path)?;
+        let path = normalize_paths(previous_context.global_context.cwd(), path)?;
 
         println!("Path: {}", path.display());
 

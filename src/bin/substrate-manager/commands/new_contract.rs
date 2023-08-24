@@ -3,7 +3,7 @@ use std::path::Path;
 use inquire::Text;
 use substrate_manager::{
     ops::{self, substrate_new::NewOptions},
-    util::{canonicalize_paths, Config},
+    util::{normalize_paths, Config},
 };
 
 use super::GlobalContext;
@@ -58,7 +58,7 @@ impl InputNameContext {
         let path = Path::new(&previous_context.path);
         let name = scope.name.clone();
 
-        let path = canonicalize_paths(previous_context.global_context.cwd(), path)?;
+        let path = normalize_paths(previous_context.global_context.cwd(), path)?;
 
         let opts = NewOptions {
             path,
@@ -77,7 +77,7 @@ impl InputNameContext {
 impl InputName {
     fn input_name(context: &NewContractContext) -> color_eyre::eyre::Result<Option<String>> {
         let path_file_name =
-            canonicalize_paths(context.global_context.cwd(), Path::new(&context.path))?
+            normalize_paths(context.global_context.cwd(), Path::new(&context.path))?
                 .file_name()
                 .unwrap()
                 .to_string_lossy()

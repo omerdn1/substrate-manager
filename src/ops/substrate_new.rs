@@ -257,10 +257,8 @@ pub fn new_contract(opts: &NewOptions, config: &Config) -> SubstrateResult<()> {
     validate_rust_installation()?;
     validate_cargo_contract_installation()?;
 
-    let parent = get_parent(opts)?;
-
     println!("Creating new contract...");
-    create_smart_contract(name, parent)?;
+    create_smart_contract(name, &opts.path)?;
     mk_contract(opts, name)?;
 
     print_start_hacking_message(config.cwd(), path);
@@ -513,7 +511,6 @@ pub fn generate_node_template(template: &Template, path: &Path) -> SubstrateResu
 
         // Check if this is the top level `Cargo.toml`, as this requires some special treatments.
         if top_level_cargo_toml_path == t.to_path_buf() {
-            println!("Updating top level `Cargo.toml': {}", t.display());
             // All workspace member `Cargo.toml` file paths.
             let workspace_members = cargo_tomls
                 .iter()
@@ -542,13 +539,22 @@ pub fn validate_cargo_contract_installation() -> SubstrateResult<()> {
     Ok(())
 }
 
-pub fn create_smart_contract(name: &str, parent: &str) -> SubstrateResult<()> {
+pub fn create_smart_contract(name: &str, path: &Path) -> SubstrateResult<()> {
+    println!("path is {:?}", path);
+    let path_binding = PathBuf::from("");
+    let parent = path.parent().unwrap_or(&path_binding);
     // Recursively create project directory and all of its parent directories if they are missing
     fs::create_dir_all(parent)?;
 
     let status = Command::new("cargo-contract")
-        .args(["contract", "new", name, "-t", parent])
+        .args(["contract", "new", name, "-t", parent.to_str().unwrap()])
         .status()?;
+
+    // We have to do this in case the package name is different then its root directory name
+    let dir_from_path = path.file_name().unwrap();
+    if name != dir_from_path {
+        fs::rename(parent.join(name), path)?;
+    }
 
     if !status.success() {
         return Err(anyhow::anyhow!("failed to create smart contract"));

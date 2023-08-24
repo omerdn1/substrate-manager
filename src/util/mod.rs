@@ -8,11 +8,11 @@ pub mod config;
 pub mod errors;
 pub mod restricted_names;
 
-pub fn canonicalize_paths(root_path: &Path, path: &Path) -> color_eyre::eyre::Result<PathBuf> {
+pub fn normalize_paths(root_path: &Path, path: &Path) -> color_eyre::eyre::Result<PathBuf> {
     let canonical_parent = if let Some(parent) = path.parent() {
-        root_path.join(parent).canonicalize()?
+        cargo_util::paths::normalize_path(&root_path.join(parent))
     } else {
-        Path::new("").into()
+        PathBuf::from("")
     };
 
     Ok(canonical_parent.join(path.file_name().unwrap()))
