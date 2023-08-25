@@ -18,7 +18,7 @@ Diving into Substrate development can feel like navigating a complex maze, where
 Substrate Manager emerges as a transformative solution to this. It's designed to provide a streamlined experience for all Substrate-based development workflows, effectively breaking down these barriers and aligning with key principles and best practices in the ecosystem. It embodies the following core aspects:
 
 - **Simplified Development:** Substrate Manager takes care of the technical nitty-gritty – setting up libraries, tools, and dependencies. No more grappling with overwhelming guides or deciphering unfamiliar jargon. Start your Substrate journey with confidence and focus on what you do best: building.
-- **Adaptive:** Got your own project setup? No worries. Substrate Manager is like a trusty sidekick that seamlessly fits in. It's equipped to understand your project's structure and adapts effortlessly; just run `substrate-manager`!
+- **Adaptive:** Got your own project setup? No worries. Substrate Manager is like a trusty sidekick that seamlessly fits in. It's equipped to understand your project's structure and adapts effortlessly; just run `substrate`!
 - **Staying Current:** In a world of rapid tech evolution, Substrate Manager stays in the loop. We keep tabs on the latest trends and best practices in the Substrate ecosystem, ensuring that Substrate Manager remains up-to-date.
 
 ## Installation
@@ -36,7 +36,7 @@ Substrate Manager is an interactive CLI tool.
 Simply run:
 
 ```sh
-substrate-manager
+substrate
 ```
 
 ## Substrate-based chain development

@@ -1,6 +1,6 @@
 [package]
 name = "substrate-manager"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 repository = "https://github.com/omerdn1/substrate-manager"
 documentation = "https://docs.rs/substrate-manager"
@@ -47,3 +47,10 @@ which = "4.4.0"
 name = "substrate-manager"
 test = false
 doc = false
+
+[[bin]]
+name = "substrate"
+path = "src/bin/substrate-manager/main.rs"
+test = false
+doc = false
+
