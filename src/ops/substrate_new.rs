@@ -278,7 +278,6 @@ fn get_git_commit_id(path: &Path) -> String {
     let commit_id = String::from_utf8_lossy(&commit_id_output);
 
     let commit_id = commit_id.trim().to_string();
-    println!("Commit id: {}", commit_id);
     commit_id
 }
 
@@ -447,10 +446,6 @@ pub fn generate_node_template(template: &Template, path: &Path) -> SubstrateResu
 
     // Remove .git directory and reinitialize it
     fs::remove_dir_all(path.join(".git"))?;
-    Command::new("git")
-        .current_dir(path)
-        .args(["init"])
-        .status()?;
 
     if let Ok(entries) = fs::read_dir(path) {
         for entry in entries {
@@ -540,7 +535,6 @@ pub fn validate_cargo_contract_installation() -> SubstrateResult<()> {
 }
 
 pub fn create_smart_contract(name: &str, path: &Path) -> SubstrateResult<()> {
-    println!("path is {:?}", path);
     let path_binding = PathBuf::from("");
     let parent = path.parent().unwrap_or(&path_binding);
     // Recursively create project directory and all of its parent directories if they are missing
